@@ -1,6 +1,8 @@
 # JRayTracing 
 
-2D Raytracing project using swing with dynamic objects.
+ 2D Raytracing project using swing with dynamic objects.  
+You can use mouse controls to interact with light source.  
+Or, you can hold space to pause object movement
 
 ![preview](https://i.imgur.com/wP1vndF.gif)
 
@@ -13,7 +15,6 @@
     git clone [https://github.com/yunusezer/JRayTracing.git]
     ```
 3.   Run class `Main.java`.
-4.  You can use mouse controls to interact with light source.
 
 ---
 *Issues: Currently none that I am aware.*

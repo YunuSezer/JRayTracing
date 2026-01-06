@@ -8,6 +8,17 @@ public class Obstacle extends Entity {
     int moveSpeed = 6;
     boolean moveDirection;
 
+    public static boolean isPaused() {
+        return isPaused;
+    }
+
+    static boolean isPaused;
+
+    public static void setPaused(boolean paused) {
+        isPaused = paused;
+    }
+
+
     public Obstacle() {
         x = 400;
         y = 400;
@@ -31,15 +42,17 @@ public class Obstacle extends Entity {
     }
 
     public void updateObstacle(int windowWidth) {
-        if (moveDirection) x += moveSpeed;
-        else x -= moveSpeed;
+        if(!isPaused) {
+            if (moveDirection) x += moveSpeed;
+            else x -= moveSpeed;
 
-        if (x >= windowWidth - radius) {
-            x = windowWidth - radius;
-            moveDirection = false;
-        } else if (x <= radius) {
-            x = radius;
-            moveDirection = true;
+            if (x >= windowWidth - radius) {
+                x = windowWidth - radius;
+                moveDirection = false;
+            } else if (x <= radius) {
+                x = radius;
+                moveDirection = true;
+            }
         }
     }
 }

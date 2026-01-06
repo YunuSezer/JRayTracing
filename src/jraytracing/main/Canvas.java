@@ -7,10 +7,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
 
-public class Canvas extends JPanel implements ActionListener {
+public class Canvas extends JPanel implements ActionListener, KeyListener {
 
     Timer timer;
 
@@ -25,10 +27,14 @@ public class Canvas extends JPanel implements ActionListener {
 
         light = new Light();
         obstacles.add(new Obstacle());
-        obstacles.add(new Obstacle(400,400,25));
-        obstacles.add(new Obstacle(300,300,50));
+        obstacles.add(new Obstacle(400, 400, 25));
+        obstacles.add(new Obstacle(300, 300, 50));
 
         addMouseMotionListener(light);
+        addKeyListener(this);
+
+        this.setFocusable(true);
+        this.requestFocusInWindow();
     }
 
 
@@ -41,10 +47,9 @@ public class Canvas extends JPanel implements ActionListener {
                 RenderingHints.VALUE_ANTIALIAS_ON);
 
 
-
         light.drawLight(graphics2D, obstacles);
 
-        for (Obstacle o: obstacles){
+        for (Obstacle o : obstacles) {
             o.updateObstacle(getWidth());
             o.drawObstacle(graphics2D);
         }
@@ -55,4 +60,24 @@ public class Canvas extends JPanel implements ActionListener {
         repaint();
     }
 
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_SPACE && !Obstacle.isPaused()) {
+            Obstacle.setPaused(true);
+        }
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_SPACE && Obstacle.isPaused()){
+            Obstacle.setPaused(false);
+        }
+
+    }
 }
