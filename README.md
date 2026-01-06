@@ -2,7 +2,11 @@
 
 2D Raytracing project using swing with dynamic objects.
 
-![preview](https://i.imgur.com/wP1vndF.gif)
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/d3fb0d32-0b4a-426f-9ff2-961832c19382" width="100" autoplay muted loop>
+  </video>
+</div>
+
 
 ---
 ## How to Run?
