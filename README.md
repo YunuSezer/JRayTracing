@@ -4,7 +4,11 @@
 You can use mouse controls to interact with light source.  
 Or, you can hold space to pause object movement
 
-![preview](https://i.imgur.com/wP1vndF.gif)
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/d3fb0d32-0b4a-426f-9ff2-961832c19382" width="100" autoplay muted loop>
+  </video>
+</div>
+
 
 ---
 ## How to Run?
