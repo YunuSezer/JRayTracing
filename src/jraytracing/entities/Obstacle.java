@@ -20,19 +20,13 @@ public class Obstacle extends Entity {
 
 
     public Obstacle() {
-        x = 400;
-        y = 400;
-        radius = 100;
-        color = Color.WHITE;
+        super(400,400,100,Color.WHITE);
 
         moveDirection = true;
     }
 
     public Obstacle(int x, int y,int radius) {
-        this.x = x;
-        this.y = y;
-        this.radius = radius;
-
+        super(x,y,radius,Color.WHITE);
     }
 
     public void drawObstacle(Graphics2D g) {

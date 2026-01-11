@@ -10,11 +10,9 @@ public class Light extends Entity implements MouseMotionListener {
     ArrayList<Ray> rays = new ArrayList<>();
 
     public Light() {
+        super(200,200,10,Color.YELLOW);
+
         int rayAmount = Ray.getRayAmount();
-        x = 200;
-        y = 200;
-        radius = 10;
-        color = Color.YELLOW;
 
         for (int i = 0; i < rayAmount; i++) {
             rays.add(new Ray((360.0 / rayAmount) * i));
